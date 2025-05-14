@@ -182,8 +182,14 @@ function ProfilePage() {
         alignItems: 'center',
         justifyContent: 'center'
       }}>
-        <input type="date" name="start" value={form.start} onChange={handleChange} required style={mobileInputStyle} />
-        <input type="date" name="end" value={form.end} onChange={handleChange} required style={mobileInputStyle} />
+        <div style={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start', width: '100%', maxWidth: 180}}>
+          <label htmlFor="start" style={{marginBottom: 2, fontSize: 13, color: '#23395d'}}>Начало службы</label>
+          <input type="date" name="start" id="start" value={form.start} onChange={handleChange} required style={mobileInputStyle} pattern="\\d{4}-\\d{2}-\\d{2}" placeholder="гггг-мм-дд" />
+        </div>
+        <div style={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start', width: '100%', maxWidth: 180}}>
+          <label htmlFor="end" style={{marginBottom: 2, fontSize: 13, color: '#23395d'}}>Окончание службы</label>
+          <input type="date" name="end" id="end" value={form.end} onChange={handleChange} required style={mobileInputStyle} pattern="\\d{4}-\\d{2}-\\d{2}" placeholder="гггг-мм-дд" />
+        </div>
         <select name="coeff" value={form.coeff} onChange={handleChange} style={mobileInputStyle}>
           <option value="1">1</option>
           <option value="1.5">1.5</option>
